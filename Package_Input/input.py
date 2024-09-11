@@ -15,10 +15,11 @@ def get_int(mensaje: str, mensaje_error: str, minimo: int, maximo: int, reintent
         int|None: Si el dato se valida devuelve un entero, en caso contratio no devuelva nada.
     """
     while reintentos > 0:
-        dato_ingresado = input(mensaje)
+        print(mensaje)
+        dato_ingresado = input()
         if validate_number(dato_ingresado):
             dato_ingresado = int(dato_ingresado)
-            if dato_ingresado > minimo and dato_ingresado < maximo:
+            if dato_ingresado >= minimo and dato_ingresado <= maximo:
                 return dato_ingresado
                 break
         print(mensaje_error)
@@ -39,10 +40,11 @@ def get_float(mensaje: str, mensaje_error: str, minimo: float, maximo: float, re
         float|None: Si el dato se valida devuelve el numero flotante, en caso contrario no devuelve nada.
     """
     while reintentos > 0:
-        dato_ingresado = input(mensaje)
+        print(mensaje)
+        dato_ingresado = input()
         if validate_number(dato_ingresado):
             dato_ingresado = float(dato_ingresado)
-            if dato_ingresado > minimo and dato_ingresado < maximo:
+            if dato_ingresado >= minimo and dato_ingresado <= maximo:
                 return dato_ingresado
                 break
         print(mensaje_error)
